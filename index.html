@@ -2,229 +2,84 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-  <title>Cash4Clothes NI — £1 per Kilo | Sell & Buy Quality Clothes</title>
-  <meta name="description" content="Cash4Clothes NI — We pay £1 per kilogram of good-quality shoes and clothes across Northern Ireland. Buy or sell by weight with us.">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Cash4Clothes NI — Maintenance</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-
-    :root{
-      --primary:#00b4d8;
-      --secondary:#0077b6;
-      --accent:#90e0ef;
-      --bg1:#caf0f8;
-      --bg2:#e0faff;
-      --text:#0a0a0a;
-      --muted:#4a4a4a;
-      --card:#ffffff;
-      font-family:'Poppins', Arial, sans-serif;
-    }
-
-    *{box-sizing:border-box;margin:0;padding:0}
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
     body{
-      background:linear-gradient(135deg,var(--bg1),var(--bg2),#eaf8ff);
-      color:var(--text);
-      line-height:1.6;
-      background-attachment: fixed;
-      background-size: cover;
-    }
-
-    .container{max-width:1150px;margin:0 auto;padding:16px}
-    header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:16px 0}
-    .brand{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-
-    .logo{
-      width:60px;height:60px;
-      background:radial-gradient(circle at 30% 30%, var(--accent), var(--primary) 70%, var(--secondary));
-      border-radius:50%;
-      display:flex;align-items:center;justify-content:center;
-      color:#fff;font-weight:800;font-size:22px;
-      text-shadow:0 0 10px rgba(255,255,255,0.4);
-      box-shadow:0 6px 18px rgba(0,0,0,0.2);
-      animation:rotateLogo 8s linear infinite;
-      flex-shrink:0;
-    }
-
-    @keyframes rotateLogo {
-      0%{transform:rotate(0deg)}
-      100%{transform:rotate(360deg)}
-    }
-
-    nav {
+      background:linear-gradient(135deg,#00b4d8,#48cae4,#0077b6);
+      height:100vh;
       display:flex;
-      flex-wrap:wrap;
-      gap:14px;
-      justify-content:center;
-      margin-top:10px;
-    }
-
-    nav a{
-      color:var(--secondary);
-      text-decoration:none;
-      font-weight:600;
-      position:relative;
-      transition:color .3s;
-    }
-
-    nav a::after{
-      content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--primary);transition:width .3s}
-    nav a:hover{color:var(--primary)}
-    nav a:hover::after{width:100%}
-
-    .hero{
-      display:grid;
-      grid-template-columns:1fr 400px;
-      gap:40px;
       align-items:center;
-      padding:40px 0;
-      animation:fadeIn 1s ease-in;
-    }
-
-    @keyframes fadeIn {
-      from{opacity:0;transform:translateY(20px)}
-      to{opacity:1;transform:translateY(0)}
-    }
-
-    .hero h1{font-size:2.2rem;margin-bottom:10px;color:var(--secondary);line-height:1.3}
-    .hero p{color:var(--muted);margin-bottom:20px;font-size:1rem}
-
-    .btn{
-      background:linear-gradient(135deg,var(--primary),var(--secondary));
-      color:#fff;padding:12px 20px;border-radius:12px;border:none;cursor:pointer;font-weight:700;
-      box-shadow:0 4px 14px rgba(0,0,0,0.15);
-      transition:transform .2s, box-shadow .3s;
-      font-size:1rem;
-    }
-    .btn:hover{transform:translateY(-3px);box-shadow:0 6px 16px rgba(0,0,0,0.25)}
-
-    section{margin-top:60px}
-    .card{
-      background:var(--card);
-      padding:22px;
-      border-radius:14px;
-      box-shadow:0 6px 18px rgba(0,0,0,0.08);
-      transition:transform .3s, box-shadow .3s;
-    }
-    .card:hover{transform:translateY(-5px);box-shadow:0 8px 20px rgba(0,0,0,0.12)}
-
-    .services,.sellbuy{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:22px;
-      margin-top:22px;
-    }
-
-    footer{
-      margin-top:70px;
-      padding:25px 0;
-      color:var(--muted);
+      justify-content:center;
+      flex-direction:column;
+      color:#fff;
+      font-family:'Poppins',sans-serif;
       text-align:center;
-      border-top:1px solid rgba(0,0,0,0.1)
+      overflow:hidden;
     }
-
-    input,textarea{
-      width:100%;
-      padding:10px;
-      border-radius:8px;
-      border:1px solid #bbb;
-      font-family:inherit;
-      font-size:1rem;
+    h1{font-size:2.5rem;margin-bottom:1rem}
+    p{font-size:1.2rem;margin-bottom:2rem}
+    .timer{font-size:2rem;font-weight:700;letter-spacing:2px;background:rgba(255,255,255,0.15);
+      padding:12px 24px;border-radius:12px;backdrop-filter:blur(10px);}
+    footer{position:absolute;bottom:20px;font-size:.9rem;opacity:.8}
+    .gear{
+      position:absolute;width:60px;height:60px;animation:spin 4s linear infinite;
+      opacity:.15;
     }
-
-    form{display:flex;flex-direction:column;gap:10px}
-
-    /* ✅ Mobile Optimizations */
-    @media(max-width:850px){
-      .hero{grid-template-columns:1fr;text-align:center;padding:20px 0}
-      .hero .card{max-width:400px;margin:0 auto}
-      nav{flex-direction:column;align-items:center}
-      header{flex-direction:column;text-align:center}
-      .hero h1{font-size:1.9rem}
-    }
-
-    @media(max-width:480px){
-      .container{padding:12px}
-      .hero h1{font-size:1.6rem}
-      .btn{padding:10px 16px;font-size:0.95rem}
-      input,textarea{font-size:0.9rem}
-      .logo{width:50px;height:50px;font-size:18px}
-    }
-	
+    .gear:nth-child(1){top:20%;left:15%;animation-duration:6s}
+    .gear:nth-child(2){bottom:25%;right:20%;animation-duration:8s}
+    @keyframes spin{to{transform:rotate(360deg)}}
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="brand">
-        <div class="logo">£</div>
-        <div>
-          <div style="font-weight:800;font-size:22px;color:var(--secondary)">Cash4Clothes NI</div>
-          <div style="font-size:13px;color:var(--muted)">Recycling Fashion | Northern Ireland</div>
-        </div>
-      </div>
-      <nav>
-        <a href="#home">Home</a>
-        <a href="#sell">Sell Clothes</a>
-        <a href="#buy">Buy from Us</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+  <svg class="gear" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="35" stroke="#fff" stroke-width="10" fill="none"/>
+  </svg>
+  <svg class="gear" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="35" stroke="#fff" stroke-width="10" fill="none"/>
+  </svg>
 
-    <section class="hero" id="home">
-      <div>
-        <h1>Earn £1 per kilogram of quality clothes and shoes!</h1>
-        <p>Trade your pre-loved fashion for cash! We pay <strong>£1 per kilo</strong> for <strong>clean, wearable</strong> shoes and clothes across Northern Ireland. All shoes must be <strong>paired</strong>, and everything should be of <strong>decent quality</strong>.</p>
-        <p><strong>Note:</strong> We <u>only accept shoes and clothing</u>. Please no bedding, pillowcases, towels, or damaged items.</p>
-        <button class="btn" onclick="document.getElementById('sell').scrollIntoView({behavior:'smooth'})">Sell Your Clothes</button>
-      </div>
-      <div class="card">
-        <h3 style="margin-top:0;color:var(--secondary)">Quick Quote</h3>
-        <form action="https://formspree.io/f/xblzqrja" method="POST">
-          <input type="text" name="name" placeholder="Full Name" required>
-          <input type="tel" name="phone" placeholder="Phone (e.g. +44...)" required>
-          <input type="text" name="location" placeholder="Postcode / Town" required>
-          <textarea name="message" rows="3" placeholder="Describe your items (type, approx. kg)" required></textarea>
-          <button class="btn" type="submit">Request Quote</button>
-        </form>
-      </div>
-    </section>
+  <h1>We'll be back soon!</h1>
+  <p>Our site is currently under maintenance.<br>Estimated time remaining:</p>
+  <div class="timer" id="countdown">30:00</div>
+  <footer>© <script>document.write(new Date().getFullYear())</script> Cash4Clothes NI</footer>
 
-    <section id="buy">
-      <h2 style="color:var(--secondary)">Buy Clothes by the Kilo</h2>
-      <p>Looking to buy quality second-hand clothing in bulk? We sell sorted, wearable items by the kilo — perfect for resellers, thrift shops, or vintage clothing sellers.</p>
-      <div class="sellbuy">
-        <div class="card">
-          <h3>Available Lots</h3>
-          <ul>
-            <li>Men’s, women’s & kids’ clothing</li>
-            <li>Paired shoes</li>
-            <li>Mixed seasonal selections</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Enquire to Buy</h3>
-          <form action="https://formspree.io/f/xblzqrja" method="POST">
-            <input type="text" name="business" placeholder="Business or Name" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <textarea name="message" rows="3" placeholder="What are you interested in buying?" required></textarea>
-            <button class="btn" type="submit">Send Enquiry</button>
-          </form>
-        </div>
-      </div>
-    </section>
+  <script>
+  const timerEl = document.getElementById('countdown');
+  const countdownMinutes = 30; // set your maintenance duration here
 
-    <section id="contact">
-      <h2 style="color:var(--secondary)">Contact Us</h2>
-      <div class="card">
-        <p><strong>Phone:</strong> 07889 638107</p>
-        <p><strong>Email:</strong> cashforclothes.ni.uk@gmail.com</p>
-        <p>Open Monday to Saturday — We respond to all messages within 24 hours.</p>
-      </div>
-    </section>
+  // Check if an end time already exists in localStorage
+  const savedEndTime = localStorage.getItem('maintenanceEndTime');
+  let endTime;
 
-    <footer>
-      <p>© <script>document.write(new Date().getFullYear())</script> Cash4Clothes NI — Futuristic Recycling | Northern Ireland</p>
-    </footer>
-  </div>
-</body>
+  if (savedEndTime && Date.now() < parseInt(savedEndTime)) {
+    endTime = parseInt(savedEndTime);
+  } else {
+    // Set new end time 30 minutes from now
+    endTime = Date.now() + countdownMinutes * 60 * 1000;
+    localStorage.setItem('maintenanceEndTime', endTime);
+  }
+
+  function updateCountdown() {
+    const now = Date.now();
+    const remaining = endTime - now;
+    if (remaining <= 0) {
+      clearInterval(interval);
+      timerEl.textContent = "We're back!";
+      localStorage.removeItem('maintenanceEndTime');
+      // Optional: automatically redirect when time ends
+      // window.location.href = "https://cash4clothesni.shop";
+      return;
+    }
+
+    const minutes = Math.floor(remaining / 60000);
+    const seconds = Math.floor((remaining % 60000) / 1000);
+    timerEl.textContent =
+      `${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
+  }
+
+  updateCountdown();
+  const interval = setInterval(updateCountdown, 1000);
+</script>
 </html>
