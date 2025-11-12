@@ -136,7 +136,8 @@
       <h1>Turn Your Wardrobe Into Cash</h1>
       <p>We pay <strong>£1 per kg</strong> for wearable clothes and <strong>£5 per shoe pair</strong>. Only clean, non-damaged items accepted. Local pickups across the UK & beyond.</p>
       <button class="btn" onclick="document.getElementById('sell').scrollIntoView({behavior:'smooth'})">Sell Now</button>
-      <button class="btn" onclick="openChat()">Chat 24/7</button>
+      <button class="btn" onclick="openTawkChat()">Chat 24/7</button>
+
     </div>
   </section>
 
@@ -316,6 +317,15 @@
   s1.setAttribute('crossorigin','*');
   s0.parentNode.insertBefore(s1,s0);
   })();
+  function openTawkChat() {
+  if (window.Tawk_API) {
+    Tawk_API.maximize(); // Opens the chat
+    Tawk_API.showWidget(); // Ensures widget is visible
+  } else {
+    console.warn("Tawk.to is not loaded yet.");
+  }
+}
+
   </script>
 </body>
 </html>
