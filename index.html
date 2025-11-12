@@ -84,7 +84,12 @@
     @media(max-width:600px){.navlinks{display:none}}
   </style>
 </head>
+
+
 <body>
+
+
+
   <!-- Header -->
   <header>
     <div class="container nav">
@@ -222,21 +227,8 @@
     </div>
   </footer>
 
-  <!-- Chat Widget -->
-  <div id="chat" class="chat-widget">
-    <div class="chat-header">
-      <div style="font-weight:800">Cash4Clothes Chat</div>
-      <button onclick="toggleChat()" style="color:#fff;background:none;border:none;font-size:16px">✕</button>
-    </div>
-    <div class="chat-body" id="chatBody"></div>
-    <div class="chat-input">
-      <input id="chatInput" placeholder="Type a message...">
-      <button class="btn" onclick="sendChat()">Send</button>
-    </div>
-  </div>
-  <div id="launcher" style="position:fixed;right:18px;bottom:18px;z-index:9999">
-    <button onclick="openChat()" style="padding:14px 18px;border-radius:50%;background:var(--c1);color:#fff;font-weight:800;">Chat</button>
-  </div>
+  
+  
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
@@ -256,8 +248,23 @@
     // Parallax layers scroll
     window.addEventListener('scroll',()=>{document.querySelectorAll('.parallax-layer').forEach(l=>{const speed=parseFloat(l.dataset.speed)||0.1;l.style.transform=`translateY(${window.scrollY*speed}px)`;});});
   </script>
+<!-- Other content -->
+
+<!-- Tawk.to Live Chat -->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/691474b411efb11958061b96/1j9rufok0';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
 </body>
 </html>
+
 
 
 
