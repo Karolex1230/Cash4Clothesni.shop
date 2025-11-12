@@ -101,6 +101,33 @@
     /* Responsive */
     @media(max-width:980px){.gallery{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:600px){.navlinks{display:none}}
+	.testimonial-slider {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.testimonial {
+  background: var(--bg2);
+  border-left: 5px solid var(--c4);
+  border-radius: 15px;
+  padding: 20px;
+  font-style: italic;
+  transition: transform 0.3s ease;
+}
+
+.testimonial:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial strong {
+  display: block;
+  margin-top: 10px;
+  font-style: normal;
+  color: var(--c4);
+}
+
   </style>
 </head>
 <body>
@@ -141,29 +168,84 @@
     </div>
   </section>
 
-  <!-- Sell Section -->
+    <!-- Sell Section -->
   <section id="sell">
     <div class="container">
       <h2>Sell Clothes & Shoes</h2>
-      <p class="lead">We only accept wearable, non-damaged items. Packed neatly, paired shoes, clean clothes.</p>
+      <p class="lead">
+        Turn your unwanted clothes and shoes into instant cash.  
+        We buy clean, wearable items — paired shoes, folded garments, and sorted textiles.
+      </p>
+
       <div class="grid">
         <div class="card">
-          <h3>Collection Options</h3>
-          <p>Book a collection or drop off at our partner locations. Flexible scheduling available.</p>
+          <h3>What We Accept</h3>
+          <ul>
+            <li>Everyday clothing — men’s, women’s, and children’s</li>
+            <li>Paired shoes in wearable condition</li>
+            <li>Accessories such as belts, scarves, and hats</li>
+            <li>No damaged, stained, or wet items, please</li>
+          </ul>
+          <p style="margin-top:10px;">All items are inspected on collection or drop-off.</p>
         </div>
+
+        <div class="card">
+          <h3>Collection Options</h3>
+          <p>We make selling simple and convenient:</p>
+          <ul>
+            <li><strong>Home Collection:</strong> Book a pickup time that suits you</li>
+            <li><strong>Drop-Off Points:</strong> Partner locations across Northern Ireland</li>
+            <li><strong>Same-Day Collection:</strong> Available in select areas</li>
+          </ul>
+          <p style="margin-top:10px;">Flexible scheduling — we’ll come to you!</p>
+        </div>
+
         <div class="card">
           <h3>Payment</h3>
-          <p>Cash, bank transfer, or PayPal. Instant payment on inspection.</p>
+          <p>We offer fair, instant payments for your goods:</p>
+          <ul>
+            <li><strong>£1 per kilogram</strong> for wearable clothing</li>
+            <li><strong>£5 per pair</strong> for quality shoes</li>
+            <li>Instant payment via Cash, Bank Transfer, or PayPal</li>
+          </ul>
+          <p style="margin-top:10px;">You’ll get paid on inspection — no waiting around.</p>
         </div>
+
         <div class="card">
           <h3>Quick Quote</h3>
           <form action="https://formspree.io/f/xblzqrja" method="POST">
             <input name="name" placeholder="Full Name" required>
             <input name="phone" placeholder="Phone" required>
-            <input name="location" placeholder="Postcode/Town" required>
-            <textarea name="message" rows="3" placeholder="Items description (kg/shoes)" required></textarea>
+            <input name="location" placeholder="Postcode / Town" required>
+            <input name="weight" placeholder="Approx. Weight (kg)">
+            <textarea name="message" rows="3" placeholder="Describe your items (type, condition, etc.)" required></textarea>
+            <select name="collection" required style="width:100%;padding:10px;border-radius:10px;border:1px solid #ddd;color:var(--text)">
+              <option value="">Collection Preference</option>
+              <option>Book a Pickup</option>
+              <option>Drop Off at Location</option>
+              <option>Need Advice First</option>
+            </select>
             <button class="btn" type="submit">Request Quote</button>
           </form>
+        </div>
+      </div>
+
+      <!-- How It Works -->
+      <div style="margin-top:60px;text-align:center;">
+        <h2>How It Works</h2>
+        <div class="grid" style="margin-top:20px;">
+          <div class="card" style="background:linear-gradient(90deg,var(--c3),var(--c4));color:#fff;">
+            <h3>1. Book Collection</h3>
+            <p>Use our quick quote form to schedule a pickup or drop-off.</p>
+          </div>
+          <div class="card" style="background:linear-gradient(90deg,var(--c4),var(--c5));color:#fff;">
+            <h3>2. Inspection</h3>
+            <p>We weigh and inspect your items for quality and wearability.</p>
+          </div>
+          <div class="card" style="background:linear-gradient(90deg,var(--c5),var(--c1));color:#fff;">
+            <h3>3. Get Paid</h3>
+            <p>Receive instant payment in cash, by transfer, or via PayPal — simple!</p>
+          </div>
         </div>
       </div>
     </div>
@@ -173,58 +255,136 @@
   <section>
     <div class="container counters">
       <div>
-        <div class="counter" data-target="1205">0</div>
-        <div class="counter-label">Items Collected (kg)</div>
+        <div class="counter" data-target="2450">0</div>
+        <div class="counter-label">Kilos Collected</div>
       </div>
       <div>
-        <div class="counter" data-target="127">0</div>
-        <div class="counter-label">Happy Customers</div>
+        <div class="counter" data-target="310">0</div>
+        <div class="counter-label">Happy Sellers</div>
       </div>
       <div>
         <div class="counter" data-target="7">0</div>
-        <div class="counter-label">Years Experience</div>
+        <div class="counter-label">Years of Trusted Service</div>
       </div>
     </div>
   </section>
+
 
   <!-- Testimonials -->
-  <section>
+   <!-- Testimonials Section -->
+  <section id="testimonials">
     <div class="container">
       <h2>What Our Customers Say</h2>
+      <p class="lead">Real feedback from happy customers all across Northern Ireland.</p>
+
       <div class="testimonial-slider">
-        <div class="testimonial"><p>Great service and super fast pickup!</p><strong>— Sarah, Belfast</strong></div>
-        <div class="testimonial"><p>Cash for clothes is simple and hassle-free.</p><strong>— James, Ballymena</strong></div>
-        <div class="testimonial"><p>Perfect for my small thrift shop purchases.</p><strong>— Priya, Antrim</strong></div>
+        <div class="testimonial card">
+          <p>"Great experience! They collected everything the same day and paid instantly — so easy!"</p>
+          <strong>— Sarah, Belfast</strong>
+        </div>
+
+        <div class="testimonial card">
+          <p>"Brilliant service. I cleared out my wardrobe and got cash straight away. Highly recommended!"</p>
+          <strong>— Mark, Lisburn</strong>
+        </div>
+
+        <div class="testimonial card">
+          <p>"Always professional and friendly. Perfect for regular sellers like me."</p>
+          <strong>— Aisling, Derry / Londonderry</strong>
+        </div>
+
+        <div class="testimonial card">
+          <p>"Collected on time and paid on the spot — couldn’t ask for better service."</p>
+          <strong>— Connor, Newtownabbey</strong>
+        </div>
+
+        <div class="testimonial card">
+          <p>"As a small shop owner, I love buying in bulk from them. Great quality and value!"</p>
+          <strong>— Emma, Bangor</strong>
+        </div>
+
+        <div class="testimonial card">
+          <p>"Friendly team and excellent communication. Definitely my go-to for donations and sales."</p>
+          <strong>— Niamh, Armagh</strong>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Buy Section -->
+
+    <!-- Buy Section -->
   <section id="buy">
     <div class="container">
       <h2>Buy Clothes by the Kilo</h2>
-      <p class="lead">Perfect for resellers, thrift shops, and charity organisations. We supply sorted wearable lots.</p>
+      <p class="lead">
+        Looking to restock your thrift shop or resale store? We supply quality-checked, wearable secondhand clothing and shoes — ready for retail or donation.
+      </p>
+
       <div class="grid">
+        <div class="card" style="grid-column:1/-1;text-align:center;background:linear-gradient(135deg,var(--c1),var(--c3));color:#fff;">
+          <h3>Why Buy from Us?</h3>
+          <p style="max-width:700px;margin:0 auto">
+            Every lot is hand-sorted, washed, and graded by condition.  
+            We ensure all items are wearable, seasonally relevant, and ready for resale — no waste, no damaged stock.
+          </p>
+        </div>
+
         <div class="card">
           <h3>Available Lots</h3>
           <ul>
-            <li>Men, women, and kids clothing</li>
-            <li>Paired shoes</li>
-            <li>Seasonal mixed selections</li>
+            <li><strong>Men’s Clothing:</strong> Shirts, jeans, jackets, and sportswear</li>
+            <li><strong>Women’s Clothing:</strong> Dresses, tops, coats, and accessories</li>
+            <li><strong>Children’s Clothing:</strong> Mixed sizes from toddlers to teens</li>
+            <li><strong>Paired Shoes:</strong> Sorted by gender and size, checked for wear</li>
+            <li><strong>Seasonal Selections:</strong> Summer, winter, and mixed fashion lots</li>
           </ul>
         </div>
+
+        <div class="card">
+          <h3>Bulk Orders & Delivery</h3>
+          <p>
+            We offer flexible bulk order sizes — from <strong>50kg up to 1000kg+</strong> per order.  
+            Nationwide delivery or collection is available. Wholesale buyers and charities receive priority pricing.
+          </p>
+          <p><strong>Shipping:</strong> Pallet and courier options available across the UK & Ireland.</p>
+          <p><strong>Minimum Order:</strong> 50kg (mixed or single category).</p>
+        </div>
+
         <div class="card">
           <h3>Enquire to Buy</h3>
           <form action="https://formspree.io/f/xblzqrja" method="POST">
             <input name="business" placeholder="Business / Name" required>
             <input name="email" placeholder="Email" required>
-            <textarea name="message" rows="3" placeholder="What you want to buy" required></textarea>
+            <input name="quantity" placeholder="Preferred Quantity (e.g. 100kg)" required>
+            <select name="delivery" required style="width:100%;padding:10px;border-radius:10px;border:1px solid #ddd;color:var(--text)">
+              <option value="">Delivery Option</option>
+              <option>Pickup (Belfast Area)</option>
+              <option>Nationwide Delivery</option>
+              <option>Arrange Your Own Courier</option>
+            </select>
+            <textarea name="message" rows="3" placeholder="Describe what you’d like to buy (categories, condition, etc.)" required></textarea>
             <button class="btn" type="submit">Send Enquiry</button>
           </form>
         </div>
       </div>
+
+      <div class="counters" style="margin-top:60px;">
+        <div>
+          <div class="counter" data-target="45">0</div>
+          <div class="counter-label">Wholesale Partners</div>
+        </div>
+        <div>
+          <div class="counter" data-target="6000">0</div>
+          <div class="counter-label">Kilos Shipped</div>
+        </div>
+        <div>
+          <div class="counter" data-target="12">0</div>
+          <div class="counter-label">Regions Served</div>
+        </div>
+      </div>
     </div>
   </section>
+
 
   <!-- Gallery -->
   <section id="gallery">
@@ -240,28 +400,111 @@
     </div>
   </section>
 
-  <!-- Contact -->
+    <!-- Contact -->
   <section id="contact">
     <div class="container">
       <h2>Contact Us</h2>
+      <p class="lead">
+        Have a question about selling, buying, or donating clothes?  
+        We're here to help — contact us anytime for quick assistance.
+      </p>
+
       <div class="grid">
+        <!-- Contact Details -->
         <div class="card">
-          <p><strong>Phone:</strong> 07889 638107</p>
-          <p><strong>Email:</strong> cash4clothes.ni.uk@gmail.com</p>
-          <p>Open Monday-Saturday, 9am-6pm</p>
+          <h3>Get in Touch</h3>
+          <p><strong>📞 Phone:</strong> 07889 638107</p>
+          <p><strong>📧 Email:</strong> <a href="mailto:cash4clothes.ni.uk@gmail.com">cash4clothes.ni.uk@gmail.com</a></p>
+          <p><strong>📍 Location:</strong> Belfast, Northern Ireland (Collections Nationwide)</p>
+          <hr style="margin:15px 0;opacity:0.2;">
+          <p><strong>🕓 Opening Hours:</strong><br>
+          Monday – Saturday: 9am – 6pm<br>
+          Sunday: Closed</p>
+          <p style="margin-top:10px;font-size:0.9rem;color:var(--muted);">
+            For urgent enquiries, please call or use the 24/7 live chat at the bottom right.
+          </p>
         </div>
+
+        <!-- Map -->
+        <div class="card">
+          <h3>Find Us</h3>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22259.04343196082!2d-5.965233412875871!3d54.60786857323667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x486107e0aa4b70df%3A0x260d7ffbcae0c7d7!2sBelfast!5e0!3m2!1sen!2suk!4v1697840000000!5m2!1sen!2suk"
+            width="100%" height="220" style="border:0;border-radius:12px;" allowfullscreen="" loading="lazy">
+          </iframe>
+          <p style="margin-top:10px;">Serving customers across Northern Ireland and the UK.</p>
+        </div>
+
+        <!-- Contact Form -->
         <div class="card">
           <h3>Message Us</h3>
           <form action="https://formspree.io/f/xblzqrja" method="POST">
             <input name="name" placeholder="Full Name" required>
-            <input name="email" placeholder="Email" required>
-            <textarea name="message" rows="3" placeholder="Your message" required></textarea>
+            <input name="email" type="email" placeholder="Email" required>
+            <select name="subject" required style="width:100%;padding:10px;border-radius:10px;border:1px solid #ddd;color:var(--text)">
+              <option value="">Select a Topic</option>
+              <option>Sell Clothes / Shoes</option>
+              <option>Buy Wholesale</option>
+              <option>Make a Donation</option>
+              <option>Other Enquiry</option>
+            </select>
+            <textarea name="message" rows="4" placeholder="Your message" required></textarea>
             <button class="btn" type="submit">Send Message</button>
           </form>
         </div>
       </div>
+
+      <!-- Optional call-to-action -->
+      <div style="margin-top:50px;text-align:center;">
+        <p class="lead">Prefer instant support? Use our <strong>Live Chat</strong> below — we're online 24/7.</p>
+        <button class="btn" onclick="openTawkChat()">Chat Now</button>
+      </div>
     </div>
   </section>
+
+    <!-- Donation Section -->
+  <section id="donate">
+    <div class="container">
+      <h2>Donate to Help Schools & Charities</h2>
+      <p class="lead">
+        Not all clothes are sellable — but many can still make a difference!  
+        Your donations help fund local schools, support low-income families, and supply charities across Northern Ireland and beyond.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>How Donations Help</h3>
+          <ul>
+            <li>Provide uniforms and warm clothing to children in need</li>
+            <li>Support community education programs</li>
+            <li>Assist shelters and charitable shops</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Donate Items</h3>
+          <p>We accept wearable clothing, shoes, and accessories suitable for reuse.</p>
+          <form action="https://formspree.io/f/xblzqrja" method="POST">
+            <input name="name" placeholder="Full Name" required>
+            <input name="phone" placeholder="Phone" required>
+            <input name="location" placeholder="Postcode/Town" required>
+            <textarea name="message" rows="3" placeholder="Describe your donation (items, approx. weight, etc.)" required></textarea>
+            <button class="btn" type="submit">Arrange Donation</button>
+          </form>
+        </div>
+        <div class="card">
+          <h3>Monetary Donations</h3>
+          <p>If you'd prefer to contribute financially, every pound goes toward educational supplies and charity logistics.</p>
+          <a href="https://www.paypal.com/donate" target="_blank">
+            <button class="btn">Donate via PayPal</button>
+          </a>
+          <p style="margin-top:10px;font-size:0.9rem;color:var(--muted);">
+            All donations are securely processed and directly benefit our community partners.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <footer>
     <div class="container">
