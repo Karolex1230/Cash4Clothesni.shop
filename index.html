@@ -4,22 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
   <title>Cash4Clothes NI — Sell Clothes & Shoes for Cash</title>
-  <meta name="description" content="Cash4Clothes NI — Get paid up to £1/kg for Grade A premium clothes and up to £5 per pair for premium branded shoes. No Grade C, bedding, curtains, socks, underwear or belts accepted.">
+  <meta name="description" content="Cash4Clothes NI — Get paid up to £1/kg for Grade A premium clothes and up to £5 per pair for premium branded shoes. Donate to this week’s chosen foundation.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<!-- Favicon -->
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 
-<!-- iPhone / Apple -->
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#2fb344">
 
-<!-- Android / PWA -->
-<link rel="manifest" href="/site.webmanifest">
-
-<meta name="theme-color" content="#2fb344">
   <style>
     :root{
       --blue:#0f7be8;
@@ -68,6 +64,7 @@
     .btn:hover{transform:translateY(-2px);box-shadow:0 18px 36px rgba(15,123,232,.30)}
     .btn.secondary{background:#fff;color:var(--navy)}
     .btn.warning{background:linear-gradient(135deg,var(--orange),#f04438)}
+    .btn.donate{background:linear-gradient(135deg,#2fb344,#12b76a)}
 
     section{padding:78px 0}
     .section-card{background:var(--card);border-radius:30px;box-shadow:var(--shadow);padding:42px;border:1px solid rgba(217,227,238,.75)}
@@ -103,9 +100,11 @@
     .quote-big{font-size:2rem;font-weight:900;color:var(--green-dark)}
     .notice{font-size:.9rem;color:var(--muted)}
 
-    .steps{counter-reset:step}
-    .step{position:relative;padding-left:70px;min-height:58px}
-    .step:before{counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:48px;height:48px;border-radius:16px;background:var(--gradient);color:#fff;display:grid;place-items:center;font-weight:900;font-size:1.2rem}
+    .donation-options{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:15px 0 20px}
+    .donate-box input{display:none}
+    .donate-box span{display:block;padding:18px;text-align:center;font-weight:900;border-radius:18px;border:2px solid #d9e3ee;background:#fff;cursor:pointer;transition:.2s ease}
+    .donate-box input:checked + span{background:var(--gradient);color:#fff;border-color:transparent;transform:translateY(-2px);box-shadow:0 12px 25px rgba(15,123,232,.2)}
+    .charity-image{width:100%;height:260px;object-fit:cover;border-radius:20px;margin-bottom:18px;box-shadow:0 10px 30px rgba(8,42,82,.10)}
 
     .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
     .gallery img{height:210px;width:100%;object-fit:cover;border-radius:20px;box-shadow:0 10px 26px rgba(8,42,82,.08);cursor:pointer;transition:.25s ease}
@@ -126,9 +125,11 @@
       .gallery{grid-template-columns:repeat(2,1fr)}
       .hero{min-height:78vh}
     }
+    @media(max-width:650px){.donation-options{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:520px){.gallery{grid-template-columns:1fr}.hero-actions .btn{width:100%}}
   </style>
 </head>
+
 <body>
 
 <header>
@@ -144,6 +145,7 @@
       <a href="#sell">Sell</a>
       <a href="#grades">Grades</a>
       <a href="#quote">Quote Tool</a>
+      <a href="#charity">Donate</a>
       <a href="#buy">Buy Wholesale</a>
       <a href="#contact" class="nav-cta">Contact</a>
     </nav>
@@ -157,10 +159,11 @@
   <div class="hero-content">
     <div class="badge">Premium items pay more — poor quality is refused</div>
     <h1>Get Cash for Quality Clothes & Shoes</h1>
-    <p>We pay <strong>up to £1/kg</strong> for Grade A premium clothes and <strong>up to £5 per pair</strong> for Grade A premium branded shoes. We are strict: no Grade C, no damaged stock, no bedding, no curtains, no socks, no underwear and no belts.</p>
+    <p>We pay <strong>up to £1/kg</strong> for Grade A premium clothes and <strong>up to £5 per pair</strong> for Grade A premium branded shoes. You can also donate to this week’s chosen foundation.</p>
     <div class="hero-actions">
       <a href="#quote" class="btn">Get an Estimate</a>
       <a href="tel:07889638107" class="btn secondary">Call 07889 638107</a>
+      <a href="#charity" class="btn donate">❤️ Donate This Week</a>
       <button class="btn warning" onclick="openTawkChat()">Chat 24/7</button>
     </div>
   </div>
@@ -285,6 +288,7 @@
               <input id="phone" name="phone" placeholder="Phone Number" required>
             </div>
           </div>
+
           <div class="form-row">
             <div>
               <label for="email">Email</label>
@@ -295,6 +299,7 @@
               <input id="location" name="location" placeholder="Postcode / Town" required>
             </div>
           </div>
+
           <div class="form-row">
             <div>
               <label for="bags">Bags of Clothes</label>
@@ -305,6 +310,7 @@
               <input id="weight" name="approx_clothes_weight_kg" type="number" min="0" step="0.1" placeholder="Example: 18">
             </div>
           </div>
+
           <div class="form-row">
             <div>
               <label for="clothesGrade">Clothes Grade</label>
@@ -319,11 +325,21 @@
               <input id="shoePairs" name="shoe_pairs" type="number" min="0" step="1" value="0">
             </div>
           </div>
+
           <label for="shoeBrands">Shoe Brands / Clothing Brands</label>
-          <input id="shoeBrands" name="brands_list" placeholder="Example: Nike, Levi’s, Adidas, unbranded, unbranded">
+          <input id="shoeBrands" name="brands_list" placeholder="Example: Nike, Levi’s, Adidas, unbranded">
 
           <label for="condition">Condition Notes</label>
           <textarea id="condition" name="condition_notes" placeholder="Tell us about stains, defects, branded items, shoe condition, etc." required></textarea>
+
+          <label for="charityDonation">Optional Charity Donation</label>
+          <select id="charityDonation" name="optional_charity_donation">
+            <option value="">No donation</option>
+            <option value="£1">Donate £1</option>
+            <option value="£2.50">Donate £2.50</option>
+            <option value="£5">Donate £5</option>
+            <option value="£10">Donate £10</option>
+          </select>
 
           <input type="hidden" id="estimatedQuote" name="estimated_quote">
           <input type="hidden" id="quoteBreakdown" name="quote_breakdown">
@@ -349,7 +365,6 @@
           <li>Premium branded shoes estimate: up to £5/pair</li>
           <li>Unbranded or worn shoes may be reduced or refused</li>
         </ul>
-        <p style="margin-top:14px"><strong>Example:</strong> 2 bags, 5 shoe pairs and brands like Nike, Levi’s and Adidas will receive a stronger estimated quote than mostly unbranded items.</p>
       </div>
     </div>
   </div>
@@ -368,6 +383,79 @@
     <div class="counter-card">
       <div class="counter" data-target="7">0</div>
       <div class="counter-label">Years of Trusted Service</div>
+    </div>
+  </div>
+</section>
+
+<section id="charity">
+  <div class="container section-card">
+    <div class="section-head">
+      <h2>Donate to This Week’s Chosen Foundation</h2>
+      <p class="lead">Choose £1, £2.50, £5 or £10. Donations are paid securely through Stripe and will be given to the foundation chosen this week.</p>
+    </div>
+
+    <div class="grid">
+      <div class="card highlight">
+        <span class="pill green-pill">Secure Stripe Donation</span>
+        <h3>Choose Your Donation</h3>
+
+        <p style="font-weight:700;color:#137a2a;margin-bottom:15px;">
+          100% of donations this week go to The People’s Kitchen Belfast.
+        </p>
+
+        <div class="donation-options">
+          <label class="donate-box">
+            <input type="radio" name="donation_amount" value="1" checked>
+            <span>£1</span>
+          </label>
+          <label class="donate-box">
+            <input type="radio" name="donation_amount" value="2.50">
+            <span>£2.50</span>
+          </label>
+          <label class="donate-box">
+            <input type="radio" name="donation_amount" value="5">
+            <span>£5</span>
+          </label>
+          <label class="donate-box">
+            <input type="radio" name="donation_amount" value="10">
+            <span>£10</span>
+          </label>
+        </div>
+
+        <button class="btn donate" type="button" onclick="goToStripeDonation()">Donate Securely with Stripe</button>
+
+        <p class="notice" style="margin-top:12px">
+          We are thankful for every £1 donated to this week’s cause.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>This Week Supporting</h3>
+
+        <img
+          class="charity-image"
+          src="kitchen.jpg"
+          alt="The People's Kitchen Belfast"
+        >
+
+        <div class="quote-result">
+          <strong>Foundation:</strong><br>
+          <span style="font-size:1.3rem;font-weight:900;color:#137a2a;">
+            The People's Kitchen Belfast
+          </span>
+
+          <p style="margin-top:12px;color:#667085;font-size:.95rem;">
+            Helping support people experiencing homelessness and hunger in Belfast through meals and outreach.
+          </p>
+        </div>
+
+        <ul>
+          <li>Each week a chosen foundation is supported</li>
+          <li>Customers can donate separately from selling clothes</li>
+          <li>Donation options: £1, £2.50, £5 and £10</li>
+          <li>Payments are processed through Stripe</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -431,7 +519,7 @@
   <div class="container section-card">
     <div class="section-head">
       <h2>Contact Us</h2>
-      <p class="lead">Questions about selling, grading or wholesale buying? Contact us anytime.</p>
+      <p class="lead">Questions about selling, grading, donations or wholesale buying? Contact us anytime.</p>
     </div>
     <div class="grid">
       <div class="card">
@@ -455,6 +543,7 @@
             <option value="">Select a Topic</option>
             <option>Sell Clothes / Shoes</option>
             <option>Buy Wholesale</option>
+            <option>Donation Question</option>
             <option>Grading Question</option>
             <option>Other</option>
           </select>
@@ -477,12 +566,33 @@
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
+  const STRIPE_DONATION_LINKS = {
+    "1": "https://buy.stripe.com/28E14n4RgdE87Ll4kR4ZG03",
+    "2.50": "https://buy.stripe.com/7sYfZh83sdE83v56sZ4ZG04",
+    "5": "https://buy.stripe.com/eVq7sL0B0dE8aXx8B74ZG05",
+    "10": "https://buy.stripe.com/00w28rbfE2Zu6Hh18F4ZG06"
+  };
+
+  function goToStripeDonation(){
+    const selected = document.querySelector('input[name="donation_amount"]:checked');
+    const amount = selected ? selected.value : "1";
+    const stripeLink = STRIPE_DONATION_LINKS[amount];
+
+    if(!stripeLink){
+      alert('Donation link not found. Please try again.');
+      return;
+    }
+
+    window.location.href = stripeLink;
+  }
+
   function calculateQuote(){
     const weight = parseFloat(document.getElementById('weight').value) || 0;
     const bags = parseInt(document.getElementById('bags').value) || 0;
     const grade = document.getElementById('clothesGrade').value;
     const shoePairs = parseInt(document.getElementById('shoePairs').value) || 0;
     const brandsText = document.getElementById('shoeBrands').value.toLowerCase();
+    const charityDonation = document.getElementById('charityDonation').value || 'No donation selected';
 
     const premiumBrands = [
       'nike','adidas','levi','levis','levi’s','carhartt','north face',
@@ -538,6 +648,7 @@
       `Clothes: ${weight}kg at £${clothesRate.toFixed(2)}/kg = £${clothesTotal.toFixed(2)}. ` +
       `Shoes: ${shoePairs} pairs at approx £${shoeRate.toFixed(2)}/pair = £${shoeTotal.toFixed(2)}. ` +
       `Bags: ${bags}. Brands entered: ${document.getElementById('shoeBrands').value || 'None'}. ` +
+      `Optional charity donation selected: ${charityDonation}. ` +
       `${clothesNote} Final price subject to inspection.`;
 
     quoteText.textContent = breakdown;
